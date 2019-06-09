@@ -1,1 +1,1 @@
-# cfg
+List of configuration's files.
