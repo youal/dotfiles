@@ -11,6 +11,7 @@ set foldlevelstart=0
 set smartcase
 set autoindent
 set autoread
+set shiftround
 "set omnifunc=syntaxcomplete#Complete
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -293,11 +294,10 @@ set background=dark
 colorscheme PaperColor
 augroup configgroup
         autocmd FileType python setlocal foldmethod=indent
-        autocmd FileType python set tabstop=8
-        autocmd FileType python set softtabstop=4
         autocmd FileType python set expandtab
+        autocmd FileType python set tabstop=4
         autocmd FileType python set shiftwidth=4
-        autocmd FileType python set shiftround
+        autocmd FileType python set smarttab
         autocmd FileType python colorscheme PaperColor
         autocmd FileType sh colorscheme PaperColor
 augroup END
