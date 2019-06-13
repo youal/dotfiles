@@ -293,6 +293,7 @@ filetype plugin indent on
 
 " F8 pour utiliser tagbar
 nmap <F8> :TagbarToggle<CR>
+imap <c-space> <c-x><c-o>
 
 set background=dark
 colorscheme PaperColor
