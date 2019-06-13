@@ -13,6 +13,9 @@ set autoindent
 set autoread
 set shiftround
 "set omnifunc=syntaxcomplete#Complete
+nmap r a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap r <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs
@@ -89,6 +92,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'vimwiki/vimwiki'
 Plug 'majutsushi/tagbar'
+Plug 'ludovicchabant/vim-gutentags'
 "Plug 'mattn/emmet-vim'
 Plug 'thinca/vim-quickrun'
 "Plug 'ctrlpvim/ctrlp.vim'
