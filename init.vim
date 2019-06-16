@@ -1,5 +1,9 @@
 set nocp
 
+filetype plugin indent on
+set background=dark
+colorscheme PaperColor
+
 set nu
 syn on
 set encoding=utf-8
@@ -13,14 +17,7 @@ set autoindent
 set autoread
 "set omnifunc=syntaxcomplete#Complete
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tabs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set tabstop=8
-"set softtabstop=4
-"set expandtab
-"set shiftwidth=4
-"set shiftround
+nmap <F8> :TagbarToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Show tab number
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -284,20 +281,18 @@ let g:UltiSnipsEditSplit="vertical"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#end()
 
-filetype plugin indent on
 
-" F8 pour utiliser tagbar
-nmap <F8> :TagbarToggle<CR>
-
-set background=dark
-colorscheme PaperColor
-augroup configgroup
+augroup py
         autocmd FileType python setlocal foldmethod=indent
-        autocmd FileType python set tabstop=8
-        autocmd FileType python set softtabstop=4
-        autocmd FileType python set expandtab
-        autocmd FileType python set shiftwidth=4
-        autocmd FileType python set shiftround
         autocmd FileType python colorscheme PaperColor
+augroup END
+augroup sh
         autocmd FileType sh colorscheme PaperColor
 augroup END
+
+set nojoinspaces
+set textwidth=80
+set formatoptions=cqjr1
+
+" use fmt as external progrma for gq
+"set formatprg=fmt
