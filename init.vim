@@ -15,7 +15,11 @@ set foldlevelstart=0
 set smartcase
 set autoindent
 set autoread
+set shiftround
 "set omnifunc=syntaxcomplete#Complete
+nmap r a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap r <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+
 
 nmap <F8> :TagbarToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -85,6 +89,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'vimwiki/vimwiki'
 Plug 'majutsushi/tagbar'
+Plug 'ludovicchabant/vim-gutentags'
 "Plug 'mattn/emmet-vim'
 Plug 'thinca/vim-quickrun'
 "Plug 'ctrlpvim/ctrlp.vim'
@@ -282,8 +287,23 @@ let g:UltiSnipsEditSplit="vertical"
 call plug#end()
 
 
+<<<<<<< HEAD
 augroup py
         autocmd FileType python setlocal foldmethod=indent
+=======
+" F8 pour utiliser tagbar
+nmap <F8> :TagbarToggle<CR>
+imap <c-x> <c-x><c-o>
+
+set background=dark
+colorscheme PaperColor
+augroup configgroup
+        autocmd FileType python setlocal foldmethod=indent
+        autocmd FileType python set expandtab
+        autocmd FileType python set tabstop=4
+        autocmd FileType python set shiftwidth=4
+        autocmd FileType python set smarttab
+>>>>>>> d484d19e7f6b0579fee794f9a1a05b32afb15b18
         autocmd FileType python colorscheme PaperColor
 augroup END
 augroup sh
