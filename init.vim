@@ -1,7 +1,10 @@
 set nocp
 
-set nu
+filetype plugin indent on
+set background=dark
 syn on
+
+set nu
 set encoding=utf-8
 set cursorline
 set wildmenu
@@ -9,22 +12,13 @@ set incsearch
 set foldenable
 set foldlevelstart=0
 set smartcase
-set autoindent
+set cindent
 set autoread
-set shiftround
 "set omnifunc=syntaxcomplete#Complete
-nmap r a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
-imap r <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tabs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set tabstop=8
-"set softtabstop=4
-"set expandtab
-"set shiftwidth=4
-"set shiftround
+nmap <F8> :TagbarToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Show tab number
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -78,14 +72,6 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let &colorcolumn=join(range(81,999),",")
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
-
-"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%84v.\+/
-" Barre vertical apres 80 chars
-"if (exists('+colorcolumn'))
-"    set colorcolumn=84
-"        highlight ColorColumn ctermbg=9
-"endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#begin('~/.local/share/nvim/plugged')
@@ -140,6 +126,7 @@ Plug 'tomasr/molokai'
 Plug 'sickill/vim-monokai'
 Plug 'sjl/badwolf'
 Plug 'nanotech/jellybeans.vim'
+Plug 'christoomey/vim-tmux-navigator'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Deocomplete (NeoVim)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -289,20 +276,18 @@ let g:UltiSnipsEditSplit="vertical"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#end()
 
-filetype plugin indent on
-
-" F8 pour utiliser tagbar
-nmap <F8> :TagbarToggle<CR>
-imap <c-x> <c-x><c-o>
-
-set background=dark
 colorscheme PaperColor
-augroup configgroup
+
+augroup py
         autocmd FileType python setlocal foldmethod=indent
-        autocmd FileType python set expandtab
-        autocmd FileType python set tabstop=4
-        autocmd FileType python set shiftwidth=4
-        autocmd FileType python set smarttab
         autocmd FileType python colorscheme PaperColor
+        autocmd FileType python abbreviate #b ################################################################################
+augroup END
+augroup sh
         autocmd FileType sh colorscheme PaperColor
 augroup END
+augroup hs
+        autocmd FileType haskell setlocal expandtab
+        autocmd FileType haskell setlocal softtabstop=8
+augroup END
+
