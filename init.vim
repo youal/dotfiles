@@ -2,8 +2,6 @@ set nocp
 
 filetype plugin indent on
 set background=dark
-syn on
-
 set nu
 set encoding=utf-8
 set cursorline
@@ -17,7 +15,6 @@ set autoread
 "set omnifunc=syntaxcomplete#Complete
 nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
-
 nmap <F8> :TagbarToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Show tab number
@@ -281,7 +278,6 @@ colorscheme PaperColor
 augroup py
         autocmd FileType python setlocal foldmethod=indent
         autocmd FileType python colorscheme PaperColor
-        autocmd FileType python abbreviate #b ################################################################################
 augroup END
 augroup sh
         autocmd FileType sh colorscheme PaperColor
@@ -291,3 +287,11 @@ augroup hs
         autocmd FileType haskell setlocal softtabstop=8
 augroup END
 
+
+set nojoinspaces
+set textwidth=80
+set formatoptions=cqjr1
+
+" use fmt as external progrma for gq
+"set formatprg=fmt
+colorscheme PaperColor
