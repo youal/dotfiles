@@ -2,6 +2,7 @@ set nocp
 
 filetype plugin indent on
 set background=dark
+syn on
 set nu
 set encoding=utf-8
 set cursorline
@@ -278,6 +279,7 @@ colorscheme PaperColor
 augroup py
         autocmd FileType python setlocal foldmethod=indent
         autocmd FileType python colorscheme PaperColor
+        autocmd FileType python abbreviate #b ################################################################################
 augroup END
 augroup sh
         autocmd FileType sh colorscheme PaperColor
@@ -294,4 +296,3 @@ set formatoptions=cqjr1
 
 " use fmt as external progrma for gq
 "set formatprg=fmt
-colorscheme PaperColor
