@@ -296,3 +296,5 @@ set formatoptions=cqjr1
 
 " use fmt as external progrma for gq
 "set formatprg=fmt
+
+set hidden
