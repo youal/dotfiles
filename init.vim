@@ -2,17 +2,13 @@ set nocp
 
 filetype plugin indent on
 set background=dark
-syn on
+syn enable
 set nu
 set encoding=utf-8
 set cursorline
-set wildmenu
-set incsearch
-set foldenable
-set foldlevelstart=0
+set foldlevelstart=1
+set foldmethod=syntax
 set smartcase
-set cindent
-set autoread
 "set omnifunc=syntaxcomplete#Complete
 nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
@@ -73,6 +69,9 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#begin('~/.local/share/nvim/plugged')
+Plug 'godlygeek/tabular'
+Plug 't9md/vim-choosewin'
+Plug 'MattesGroeger/vim-bookmarks'
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'vimwiki/vimwiki'
 Plug 'majutsushi/tagbar'
@@ -298,3 +297,4 @@ set formatoptions=cqjr1
 "set formatprg=fmt
 
 set hidden
+set foldcolumn=3
