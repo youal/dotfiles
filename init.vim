@@ -289,6 +289,9 @@ augroup hs
         autocmd FileType haskell setlocal expandtab
         autocmd FileType haskell setlocal softtabstop=8
 augroup END
+augroup sql
+        autocmd FileType sql abbreviate #b --------------------------------------------------------------------------------
+augroup END
 
 
 set nojoinspaces
