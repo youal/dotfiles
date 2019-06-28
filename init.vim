@@ -303,3 +303,6 @@ set formatoptions=cqjr1
 
 set hidden
 set foldcolumn=3
+
+" Fixes paste issue in insert mode
+inoremap <C-r> <C-r><C-p>
