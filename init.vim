@@ -231,7 +231,6 @@ let g:rbpt_loadcmd_toggle = 0
 "Plug 'MarcWeber/vim-addon-mw-utils'
 "Plug 'tomtom/tlib_vim'
 "Plug 'garbas/vim-snipmate'
-"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Repl
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
