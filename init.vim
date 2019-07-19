@@ -284,6 +284,10 @@ augroup END
 augroup sh
         autocmd FileType sh colorscheme PaperColor
 augroup END
+augroup yaml
+        autocmd FileType yaml setlocal softtabstop=2
+        autocmd FileType yaml setlocal shiftwidth=2
+augroup END
 augroup hs
         autocmd FileType haskell setlocal expandtab
         autocmd FileType haskell setlocal softtabstop=8
