@@ -75,7 +75,7 @@ Plug 'godlygeek/tabular'
 Plug 't9md/vim-choosewin'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'christoomey/vim-tmux-navigator'
-"Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki'
 Plug 'majutsushi/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
 "Plug 'mattn/emmet-vim'
@@ -95,6 +95,7 @@ Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Shougo/denite.nvim'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'benmills/vimux'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -104,11 +105,18 @@ let g:ale_completion_enabled = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bash
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Plug 'koalaman/shellcheck'
+Plug 'koalaman/shellcheck'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " C
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Plug 'vim-scripts/a.vim'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Clojure
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-salve'
+Plug 'guns/vim-clojure-static'
+Plug 'guns/vim-clojure-highlight'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -278,6 +286,7 @@ colorscheme PaperColor
 
 augroup py
         autocmd FileType python setlocal foldmethod=indent
+        autocmd FileType python setlocal expandtab
         autocmd FileType python colorscheme PaperColor
         autocmd FileType python abbreviate #b ################################################################################
 augroup END
@@ -287,6 +296,7 @@ augroup END
 augroup yaml
         autocmd FileType yaml setlocal softtabstop=2
         autocmd FileType yaml setlocal shiftwidth=2
+        autocmd FileType yaml setlocal foldmethod=indent
 augroup END
 augroup hs
         autocmd FileType haskell setlocal expandtab
