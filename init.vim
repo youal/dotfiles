@@ -9,6 +9,8 @@ set cursorline
 set foldlevelstart=1
 set foldmethod=syntax
 set smartcase
+" Allows to be anywhere in the source tree
+set tags=./tags;/
 "set omnifunc=syntaxcomplete#Complete
 nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
