@@ -110,6 +110,14 @@ let g:ale_completion_enabled = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Plug 'vim-scripts/a.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Clojure
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-salve'
+Plug 'tpope/vim-projectionist.git'
+Plug 'tpope/vim-projectionist.git'
+Plug 'clojure-emacs/cider-nrepl'
+Plug 'tpope/vim-fireplace'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'NLKNguyen/papercolor-theme'
@@ -288,9 +296,6 @@ augroup END
 augroup hs
         autocmd FileType haskell setlocal expandtab
         autocmd FileType haskell setlocal softtabstop=8
-augroup END
-augroup sql
-        autocmd FileType sql abbreviate #b --------------------------------------------------------------------------------
 augroup END
 
 
