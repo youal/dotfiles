@@ -9,6 +9,8 @@ set cursorline
 set foldlevelstart=1
 set foldmethod=syntax
 set smartcase
+" Allows to be anywhere in the source tree
+set tags=./tags;/
 "set omnifunc=syntaxcomplete#Complete
 nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
@@ -75,7 +77,7 @@ Plug 'godlygeek/tabular'
 Plug 't9md/vim-choosewin'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'christoomey/vim-tmux-navigator'
-"Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki'
 Plug 'majutsushi/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
 "Plug 'mattn/emmet-vim'
@@ -95,6 +97,7 @@ Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Shougo/denite.nvim'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'benmills/vimux'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -104,7 +107,7 @@ let g:ale_completion_enabled = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bash
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Plug 'koalaman/shellcheck'
+Plug 'koalaman/shellcheck'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " C
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -112,11 +115,12 @@ let g:ale_completion_enabled = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Clojure
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'tpope/vim-salve'
-Plug 'tpope/vim-projectionist.git'
 Plug 'tpope/vim-projectionist.git'
 Plug 'clojure-emacs/cider-nrepl'
 Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-salve'
+Plug 'guns/vim-clojure-static'
+Plug 'guns/vim-clojure-highlight'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -239,7 +243,6 @@ let g:rbpt_loadcmd_toggle = 0
 "Plug 'MarcWeber/vim-addon-mw-utils'
 "Plug 'tomtom/tlib_vim'
 "Plug 'garbas/vim-snipmate'
-"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Repl
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -287,11 +290,17 @@ colorscheme PaperColor
 
 augroup py
         autocmd FileType python setlocal foldmethod=indent
+        autocmd FileType python setlocal expandtab
         autocmd FileType python colorscheme PaperColor
         autocmd FileType python abbreviate #b ################################################################################
 augroup END
 augroup sh
         autocmd FileType sh colorscheme PaperColor
+augroup END
+augroup yaml
+        autocmd FileType yaml setlocal softtabstop=2
+        autocmd FileType yaml setlocal shiftwidth=2
+        autocmd FileType yaml setlocal foldmethod=indent
 augroup END
 augroup hs
         autocmd FileType haskell setlocal expandtab
@@ -308,3 +317,6 @@ set formatoptions=cqjr1
 
 set hidden
 set foldcolumn=3
+
+" Fixes paste issue in insert mode
+inoremap <C-r> <C-r><C-p>
