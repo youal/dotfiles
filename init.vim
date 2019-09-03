@@ -113,6 +113,8 @@ Plug 'koalaman/shellcheck'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Clojure
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-projectionist.git'
+Plug 'clojure-emacs/cider-nrepl'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-salve'
 Plug 'guns/vim-clojure-static'
@@ -301,9 +303,6 @@ augroup END
 augroup hs
         autocmd FileType haskell setlocal expandtab
         autocmd FileType haskell setlocal softtabstop=8
-augroup END
-augroup sql
-        autocmd FileType sql abbreviate #b --------------------------------------------------------------------------------
 augroup END
 
 
