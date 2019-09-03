@@ -71,9 +71,7 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-commentary'
-Plug 'godlygeek/tabular'
 Plug 't9md/vim-choosewin'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'christoomey/vim-tmux-navigator'
