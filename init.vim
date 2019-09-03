@@ -78,7 +78,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'vimwiki/vimwiki'
 Plug 'majutsushi/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
-"Plug 'mattn/emmet-vim'
 Plug 'thinca/vim-quickrun'
 "Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-eunuch'
@@ -113,6 +112,8 @@ Plug 'koalaman/shellcheck'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Clojure
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-projectionist.git'
+Plug 'clojure-emacs/cider-nrepl'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-salve'
 Plug 'guns/vim-clojure-static'
@@ -150,10 +151,6 @@ endif
 Plug 'junegunn/vim-easy-align'
 vnoremap <silent> <Enter> :EasyAlign<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Easymotion
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'easymotion/vim-easymotion'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'airblade/vim-gitgutter'
@@ -181,6 +178,10 @@ let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
 let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
 let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
 let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" HTML
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Plug 'mattn/emmet-vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ncm2 (NeoVim)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -301,9 +302,6 @@ augroup END
 augroup hs
         autocmd FileType haskell setlocal expandtab
         autocmd FileType haskell setlocal softtabstop=8
-augroup END
-augroup sql
-        autocmd FileType sql abbreviate #b --------------------------------------------------------------------------------
 augroup END
 
 
