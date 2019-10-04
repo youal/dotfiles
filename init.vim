@@ -71,32 +71,26 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'tpope/vim-surround'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tpope/vim-commentary'
-Plug 't9md/vim-choosewin'
-Plug 'MattesGroeger/vim-bookmarks'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'thinca/vim-quickrun'
-"Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-eunuch'
-Plug 'dhruvasagar/vim-table-mode'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
-Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-commentary'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-repeat'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'maralla/completor.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'godlygeek/tabular'
-Plug 'Shougo/denite.nvim'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'benmills/vimux'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'thinca/vim-quickrun'
+"Plug 'tpope/vim-speeddating'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'w0rp/ale'
 let g:ale_completion_enabled = 1
+let g:ale_linters = {
+    \ 'sh': ['language_server'],
+    \ }
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bash
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -108,7 +102,7 @@ Plug 'koalaman/shellcheck'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Clojure
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'tpope/vim-projectionist.git'
+Plug 'tpope/vim-projectionist'
 Plug 'clojure-emacs/cider-nrepl'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-salve'
@@ -131,12 +125,14 @@ Plug 'tomasr/molokai'
 Plug 'sickill/vim-monokai'
 Plug 'sjl/badwolf'
 Plug 'nanotech/jellybeans.vim'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'altercation/vim-colors-solarized'
+Plug 'dracula/vim'
+Plug 'chriskempson/base16'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Easy-align
+" DelimitMate
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'junegunn/vim-easy-align'
-vnoremap <silent> <Enter> :EasyAlign<cr>
+Plug 'Raimondi/delimitMate'
+au FileType lisp let b:delimitMate_quotes = "\""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -145,19 +141,7 @@ Plug 'tpope/vim-fugitive'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Haskell
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'dag/vim2hs'
-Plug 'Twinside/vim-haskellConceal'
-Plug 'Twinside/vim-haskellFold'
-Plug 'wting/lhaskell.vim'
-" need ghc
-"Plug 'lukerandall/haskellmode-vim'
-"" need hoogle
-"Plug 'Twinside/vim-hoogle'
-"" need hindent
-"Plug 'alx741/vim-hindent'
-" need haddock
-"Plug 'neovimhaskell/haskell-vim'
+Plug 'neovimhaskell/haskell-vim'
 let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
 let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
 let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
@@ -165,30 +149,22 @@ let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
 let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
 let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
 let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
+
+"Plug 'Shougo/vimproc.vim', {'do' : 'make'}	" required by ghc-mod
+"Plug 'eagletmt/ghcmod-vim'			" Can not fix conflicts (fragile
+"?)
+"Plug 'eagletmt/neco-ghc'			" Depends on ghc-mod
+Plug 'dag/vim2hs'
+Plug 'Twinside/vim-haskellConceal'
+"Plug 'Twinside/vim-hoogle'			" Needs Hoogle
+"Plug 'alx741/vim-hindent' 			" Needs hindent
+Plug 'Twinside/vim-haskellFold'
+Plug 'wting/lhaskell.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " HTML
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Plug 'mattn/emmet-vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ncm2 (NeoVim)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" assuming you're using vim-plug: https://github.com/junegunn/vim-plug
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
-
-" IMPORTANT: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
-
-" NOTE: you need to install completion sources to get completions. Check
-" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-jedi'
-Plug 'ncm2/ncm2-ultisnips'
-Plug 'metakirby5/codi.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ocaml
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -226,11 +202,22 @@ let g:rbpt_loadcmd_toggle = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Plug 'rust-lang/rust.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Repl
+" table-mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'Shougo/vimproc.vim'
-Plug 'Shougo/vimshell.vim'
-Plug 'ujihisa/repl.vim'
+"Plug 'dhruvasagar/vim-table-mode'
+"function! s:isAtStartOfLine(mapping)
+"  let text_before_cursor = getline('.')[0 : col('.')-1]
+"  let mapping_pattern = '\V' . escape(a:mapping, '\')
+"  let comment_pattern = '\V' . escape(substitute(&l:commentstring, '%s.*$', '', ''), '\')
+"  return (text_before_cursor =~? '^' . ('\v(' . comment_pattern . '\v)?') . '\s*\v' . mapping_pattern . '\v$')
+"endfunction
+"
+"inoreabbrev <expr> <bar><bar>
+"          \ <SID>isAtStartOfLine('\|\|') ?
+"          \ '<c-o>:TableModeEnable<cr><bar><space><bar><left><left>' : '<bar><bar>'
+"inoreabbrev <expr> __
+"          \ <SID>isAtStartOfLine('__') ?
+"          \ '<c-o>:silent! TableModeDisable<cr>' : '__'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tagbar
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -245,6 +232,7 @@ nmap <c-e> :TagbarToggle<CR>
 Plug 'vimwiki/vimwiki'
  let g:vimwiki_list = [{},
              \ {'path': '~/vimwiki/wiki0/'}]
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ultinips
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Track the engine.
@@ -255,9 +243,9 @@ Plug 'honza/vim-snippets'
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
@@ -284,6 +272,7 @@ augroup END
 augroup hs
         autocmd FileType haskell setlocal expandtab
         autocmd FileType haskell setlocal softtabstop=8
+        autocmd FileType haskell setlocal formatprg=hindent
 augroup END
 augroup sql
         autocmd FileType sql abbreviate #b --------------------------------------------------------------------------------
