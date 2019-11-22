@@ -9,11 +9,14 @@ set cursorline
 set foldlevelstart=1
 set foldmethod=syntax
 set smartcase
-" Allows to be anywhere in the source tree
-set tags=./tags;/
-"set omnifunc=syntaxcomplete#Complete
+set infercase
+set incsearch
+set history=200
+"set undodir=~/.undodir
 nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+
+vmap X y/<C-R>"<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Show tab number
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -69,114 +72,112 @@ let &colorcolumn=join(range(81,999),",")
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-call plug#begin('~/.local/share/nvim/plugged')
-Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-commentary'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'godlygeek/tabular'
-Plug 'tpope/vim-repeat'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'maralla/completor.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'thinca/vim-quickrun'
-"Plug 'tpope/vim-speeddating'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+packadd minpac
+call minpac#init()
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+call minpac#add('tpope/vim-surround')
+call minpac#add('tpope/vim-commentary')
+call minpac#add('nathanaelkane/vim-indent-guides')
+call minpac#add('godlygeek/tabular')
+call minpac#add('tpope/vim-repeat')
+call minpac#add('ludovicchabant/vim-gutentags')
+call minpac#add('ntpeters/vim-better-whitespace')
+"call minpac#add('maralla/completor.vim')	" Slows down nvim
+call minpac#add('easymotion/vim-easymotion')
+call minpac#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'})
+call minpac#add('tpope/vim-projectionist')
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('thinca/vim-quickrun')
+call minpac#add('tpope/vim-speeddating')
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'w0rp/ale'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call minpac#add('w0rp/ale')
 let g:ale_completion_enabled = 1
 let g:ale_linters = {
     \ 'sh': ['language_server'],
     \ }
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bash
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'koalaman/shellcheck'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call minpac#add('koalaman/shellcheck')
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " C
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Plug 'vim-scripts/a.vim'
+"call minpac#add('vim-scripts/a.vim')
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Clojure
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'tpope/vim-projectionist'
-Plug 'clojure-emacs/cider-nrepl'
-Plug 'tpope/vim-fireplace'
-Plug 'tpope/vim-salve'
-Plug 'guns/vim-clojure-static'
-Plug 'guns/vim-clojure-highlight'
-Plug 'venantius/vim-eastwood'
+"call minpac#add('clojure-emacs/cider-nrepl')
+"call minpac#add('tpope/vim-fireplace')
+"call minpac#add('tpope/vim-salve')
+"call minpac#add('guns/vim-clojure-static')
+"call minpac#add('guns/vim-clojure-highlight')
+"call minpac#add('venantius/vim-eastwood')
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'morhetz/gruvbox'
-Plug 'cocopon/iceberg.vim'
-Plug 'whatyouhide/vim-gotham'
-Plug 'w0ng/vim-hybrid'
-Plug 'rakr/vim-one'
-Plug 'joshdick/onedark.vim'
-Plug 'jacoborus/tender.vim'
-Plug 'junegunn/seoul256.vim'
-Plug 'tomasr/molokai'
-Plug 'sickill/vim-monokai'
-Plug 'sjl/badwolf'
-Plug 'nanotech/jellybeans.vim'
-Plug 'altercation/vim-colors-solarized'
-Plug 'dracula/vim'
-Plug 'chriskempson/base16'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call minpac#add('NLKNguyen/papercolor-theme')
+call minpac#add('morhetz/gruvbox')
+call minpac#add('cocopon/iceberg.vim')
+call minpac#add('whatyouhide/vim-gotham')
+call minpac#add('w0ng/vim-hybrid')
+call minpac#add('rakr/vim-one')
+call minpac#add('joshdick/onedark.vim')
+call minpac#add('jacoborus/tender.vim')
+call minpac#add('junegunn/seoul256.vim')
+call minpac#add('tomasr/molokai')
+call minpac#add('sickill/vim-monokai')
+call minpac#add('sjl/badwolf')
+call minpac#add('nanotech/jellybeans.vim')
+call minpac#add('altercation/vim-colors-solarized')
+call minpac#add('dracula/vim')
+call minpac#add('chriskempson/base16')
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " DelimitMate
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'Raimondi/delimitMate'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call minpac#add('Raimondi/delimitMate')
 au FileType lisp let b:delimitMate_quotes = "\""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call minpac#add('airblade/vim-gitgutter')
+call minpac#add('tpope/vim-fugitive')
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Haskell
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'neovimhaskell/haskell-vim'
-let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
-let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
-let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
-let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
-let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
-let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
-let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
-
-"Plug 'Shougo/vimproc.vim', {'do' : 'make'}	" required by ghc-mod
-"Plug 'eagletmt/ghcmod-vim'			" Can not fix conflicts (fragile
-"?)
-"Plug 'eagletmt/neco-ghc'			" Depends on ghc-mod
-Plug 'dag/vim2hs'
-Plug 'Twinside/vim-haskellConceal'
-"Plug 'Twinside/vim-hoogle'			" Needs Hoogle
-"Plug 'alx741/vim-hindent' 			" Needs hindent
-Plug 'Twinside/vim-haskellFold'
-Plug 'wting/lhaskell.vim'
+"call minpac#add('neovimhaskell/haskell-vim')
+"let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+"let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+"let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+"let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+"let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+"let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+"let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
+"
+""call minpac#add('Shougo/vimproc.vim', {'do' : 'make')}	" required by ghc-mod
+""call minpac#add('eagletmt/ghcmod-vim')			" Can not fix conflicts (fragile
+""?)
+""call minpac#add('eagletmt/neco-ghc')			" Depends on ghc-mod
+"call minpac#add('dag/vim2hs')
+"call minpac#add('Twinside/vim-haskellConceal')
+""call minpac#add('Twinside/vim-hoogle')			" Needs Hoogle
+""call minpac#add('alx741/vim-hindent') 			" Needs hindent
+"call minpac#add('Twinside/vim-haskellFold')
+"call minpac#add('wting/lhaskell.vim')
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " HTML
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Plug 'mattn/emmet-vim'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ocaml
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Plug 'ocaml/merlin'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"call minpac#add('mattn/emmet-vim')
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Python
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'davidhalter/jedi-vim'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"call minpac#add('davidhalter/jedi-vim')	" Slows down nvim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Rainbowparentheses
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'kien/rainbow_parentheses.vim'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call minpac#add('kien/rainbow_parentheses.vim')
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
     \ ['Darkblue',    'SeaGreen3'],
@@ -197,14 +198,14 @@ let g:rbpt_colorpairs = [
     \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Rust
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Plug 'rust-lang/rust.vim'
+"call minpac#add('rust-lang/rust.vim')
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " table-mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Plug 'dhruvasagar/vim-table-mode'
+"call minpac#add('dhruvasagar/vim-table-mode')
 "function! s:isAtStartOfLine(mapping)
 "  let text_before_cursor = getline('.')[0 : col('.')-1]
 "  let mapping_pattern = '\V' . escape(a:mapping, '\')
@@ -218,28 +219,29 @@ let g:rbpt_loadcmd_toggle = 0
 "inoreabbrev <expr> __
 "          \ <SID>isAtStartOfLine('__') ?
 "          \ '<c-o>:silent! TableModeDisable<cr>' : '__'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tagbar
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'majutsushi/tagbar'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call minpac#add('majutsushi/tagbar')
 let g:tagbar_show_linenumbers = 1
 let g:tagbar_autofocus = 1
 let g:tagbar_foldlevel = 0
 nmap <c-e> :TagbarToggle<CR>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vimwiki
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'vimwiki/vimwiki'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call minpac#add('vimwiki/vimwiki')
  let g:vimwiki_list = [{},
-             \ {'path': '~/vimwiki/wiki0/'}]
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+             \ {'path': '~/vimwiki/wiki0/'},
+             \ {'path': '~/vimwiki/190-goals/'}]
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ultinips
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Track the engine.
-Plug 'SirVer/ultisnips'
+call minpac#add('SirVer/ultisnips')
 
 " Snippets are separated from the engine. Add this if you want them:
-Plug 'honza/vim-snippets'
+call minpac#add('honza/vim-snippets')
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
@@ -249,14 +251,16 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call plug#end()
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command! MinpacUpdate call minpac#update()
+command! MinpacClean call minpac#clean()
 
 colorscheme PaperColor
 
 augroup py
         autocmd FileType python setlocal foldmethod=indent
-        autocmd FileType python setlocal expandtab
+        autocmd FileType python setlocal expandtab tabstop=4
+        autocmd FileType python setlocal shiftwidth=4 softtabstop=4
         autocmd FileType python colorscheme PaperColor
         autocmd FileType python abbreviate #b ################################################################################
 augroup END
@@ -265,19 +269,16 @@ augroup sh
         autocmd FileType sh abbreviate #b ################################################################################
 augroup END
 augroup yaml
-        autocmd FileType yaml setlocal softtabstop=2
-        autocmd FileType yaml setlocal shiftwidth=2
+        autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
         autocmd FileType yaml setlocal foldmethod=indent
 augroup END
 augroup hs
-        autocmd FileType haskell setlocal expandtab
-        autocmd FileType haskell setlocal softtabstop=8
+        autocmd FileType haskell setlocal expandtab softtabstop=8
         autocmd FileType haskell setlocal formatprg=hindent
 augroup END
 augroup sql
         autocmd FileType sql abbreviate #b --------------------------------------------------------------------------------
 augroup END
-
 
 set nojoinspaces
 set textwidth=80
@@ -290,4 +291,10 @@ set hidden
 set foldcolumn=3
 
 " Fixes paste issue in insert mode
-inoremap <C-r> <C-r><C-p>
+"inoremap <C-r> <C-r><C-p>
+
+nnoremap <C-p> :FZF<CR>
+
+if has('nvim')
+	tnoremap <C-[> <C-\><C-n>
+endif
