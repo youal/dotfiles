@@ -269,7 +269,8 @@ augroup sh
         autocmd FileType sh abbreviate #b ################################################################################
 augroup END
 augroup yaml
-        autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+        autocmd FileType yaml setlocal expandtab tabstop=2
+        autocmd FileType yaml setlocal softtabstop=2 shiftwidth=2
         autocmd FileType yaml setlocal foldmethod=indent
 augroup END
 augroup hs
