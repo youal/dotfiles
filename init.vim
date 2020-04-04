@@ -120,21 +120,7 @@ call minpac#add('koalaman/shellcheck')
 " Colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call minpac#add('NLKNguyen/papercolor-theme')
-call minpac#add('morhetz/gruvbox')
-call minpac#add('cocopon/iceberg.vim')
-call minpac#add('whatyouhide/vim-gotham')
-call minpac#add('w0ng/vim-hybrid')
-call minpac#add('rakr/vim-one')
-call minpac#add('joshdick/onedark.vim')
-call minpac#add('jacoborus/tender.vim')
-call minpac#add('junegunn/seoul256.vim')
-call minpac#add('tomasr/molokai')
-call minpac#add('sickill/vim-monokai')
 call minpac#add('sjl/badwolf')
-call minpac#add('nanotech/jellybeans.vim')
-call minpac#add('altercation/vim-colors-solarized')
-call minpac#add('dracula/vim')
-call minpac#add('chriskempson/base16')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " DelimitMate
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -170,7 +156,6 @@ call minpac#add('tpope/vim-fugitive')
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " HTML
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-<<<<<<< HEAD
 "Plug 'mattn/emmet-vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Lisp
@@ -269,7 +254,7 @@ let g:UltiSnipsEditSplit="vertical"
 command! MinpacUpdate call minpac#update()
 command! MinpacClean call minpac#clean()
 
-colorscheme PaperColor
+colorscheme badwolf
 
 augroup py
         autocmd FileType python setlocal foldmethod=indent
