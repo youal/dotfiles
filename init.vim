@@ -264,6 +264,7 @@ augroup py
         autocmd FileType python abbreviate #b ################################################################################
 augroup END
 augroup sh
+        autocmd FileType sh setlocal foldmethod=manual
         autocmd FileType sh colorscheme PaperColor
         autocmd FileType sh abbreviate #b ################################################################################
 augroup END
