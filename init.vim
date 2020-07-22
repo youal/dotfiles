@@ -4,6 +4,8 @@ filetype plugin indent on
 set background=dark
 syn enable
 set nu
+set sm
+
 set encoding=utf-8
 set cursorline
 set foldlevelstart=1
@@ -250,6 +252,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Racket
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" https://github.com/ds26gte/scmindent
+autocmd filetype lisp,scheme setlocal equalprg=scmindent.rkt
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command! MinpacUpdate call minpac#update()
 command! MinpacClean call minpac#clean()
