@@ -1,0 +1,15 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = John Doe
+	email = my@email.com
+
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+[merge]
+	tool = vimdiff
+[core]
+	excludesfile = ~/.gitignore
