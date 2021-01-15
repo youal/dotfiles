@@ -90,6 +90,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'vim-airline/vim-airline'
 Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-speeddating'
+Plug 'cespare/vim-toml'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -228,9 +229,7 @@ nmap <c-e> :TagbarToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'vimwiki/vimwiki'
  let g:vimwiki_list = [{},
-             \ {'path': '~/vimwiki/object_storage/'},
-             \ {'path': '~/vimwiki/190-goals/'},
-             \ {'path': '~/vimwiki/export/'}]
+             \ {'path': '~/vimwiki/wiki0/'}]
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ultinips
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
