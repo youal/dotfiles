@@ -78,6 +78,13 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 packadd minpac
 call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colorscheme
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call minpac#add('NLKNguyen/papercolor-theme')
+call minpac#add('sjl/badwolf')
+
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('nathanaelkane/vim-indent-guides')
@@ -85,7 +92,6 @@ call minpac#add('godlygeek/tabular')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('ludovicchabant/vim-gutentags')
 call minpac#add('ntpeters/vim-better-whitespace')
-"call minpac#add('maralla/completor.vim')	" Slows down nvim
 call minpac#add('easymotion/vim-easymotion')
 call minpac#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'})
 call minpac#add('tpope/vim-projectionist')
@@ -118,11 +124,6 @@ call minpac#add('koalaman/shellcheck')
 "call minpac#add('guns/vim-clojure-static')
 "call minpac#add('guns/vim-clojure-highlight')
 "call minpac#add('venantius/vim-eastwood')
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Colorscheme
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call minpac#add('NLKNguyen/papercolor-theme')
-call minpac#add('sjl/badwolf')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " DelimitMate
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -264,7 +265,8 @@ command! MinpacClean call minpac#clean()
 colorscheme badwolf
 
 augroup py
-        autocmd FileType python setlocal foldmethod=indent
+	" Use a plugin instead.
+        "autocmd FileType python setlocal foldmethod=indent
         autocmd FileType python setlocal expandtab tabstop=4
         autocmd FileType python setlocal shiftwidth=4 softtabstop=4
         autocmd FileType python colorscheme PaperColor
@@ -287,6 +289,8 @@ augroup END
 augroup sql
         autocmd FileType sql abbreviate #b --------------------------------------------------------------------------------
 augroup END
+" Get comment highlighting for jsonc
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
 set nojoinspaces
 set textwidth=80
