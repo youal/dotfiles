@@ -303,23 +303,23 @@ Plug 'vimwiki/vimwiki'
              \ {'path': '~/vimwiki/190-goals/'},
              \ {'path': '~/vimwiki/export/'}]
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ultinips
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Track the engine.
-Plug 'SirVer/ultisnips'
-
-" Snippets are separated from the engine. Add this if you want them:
-Plug 'honza/vim-snippets'
-
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-"let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Ultinips
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Track the engine.
+"Plug 'SirVer/ultisnips'
+"
+"" Snippets are separated from the engine. Add this if you want them:
+"Plug 'honza/vim-snippets'
+"
+"" Trigger configuration. Do not use <tab> if you use
+"" https://github.com/Valloric/YouCompleteMe.
+""let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+"
+"" If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsEditSplit="vertical"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#end()
 
 colorscheme PaperColor
