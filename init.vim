@@ -145,6 +145,14 @@ Plug 'easymotion/vim-easymotion'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'bronson/vim-trailing-whitespace'
 
+"Plug 'elzr/vim-json'
+
+" aj provides a text object for the outermost JSON object, array, string, number, or keyword.
+" gqaj "pretty prints" (wraps/indents/sorts keys/otherwise cleans up) the JSON construct under the cursor.
+" gwaj takes the JSON object on the clipboard and extends it into the JSON object under the cursor.
+" There are also ij variants that target innermost rather than outermost JSON construct.
+Plug 'tpope/vim-jdaddy'
+
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/YankRing.vim'
 
@@ -179,7 +187,7 @@ Plug 'tmhedberg/simpylfold'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " HTML
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 "Plug 'othree/xml.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Latex
@@ -208,9 +216,6 @@ Plug 'junegunn/gv.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'w0rp/ale'
 let g:ale_completion_enabled = 1
-let g:ale_linters = {
-    \ 'sh': ['language_server'],
-    \ }
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " table-mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -249,13 +254,14 @@ Plug 'junegunn/fzf.vim'
 " Clojure
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-fireplace'
-Plug 'humorless/vim-kibit'
 
-"Plug 'tpope/vim-salve'
 "Plug 'guns/vim-clojure-static'
 "Plug 'guns/vim-clojure-highlight'
 "Plug 'venantius/vim-eastwood'
-let g:ale_linters = {'clojure': ['clj-kondo']}
+"Plug 'venantius/vim-cljfmt'
+let g:ale_linters = {'clojure': ['clj-kondo'],
+            \ 'sh': ['language_server'],
+            \ 'python': ['flake8', 'mypy', 'pylint', 'pyright', 'bandit']}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Haskell
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
