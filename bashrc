@@ -1,6 +1,6 @@
 create_kubectl_aliases() {
-	verbs=(get describe explain)
-	objects=(pod service deployment configmap secret)
+	local verbs=(get describe explain)
+	local objects=(pod service deployment configmap secret)
 	for verb in "${verbs[@]}"; do
 		for object in "${objects[@]}"; do
 			alias "k${verb:0:1}${object:0:1}=kubectl $verb $object"
