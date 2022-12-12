@@ -1,0 +1,6 @@
+[class]
+pdf_default	= [
+	{ command = "zathura", fork = true, silent = true } ]
+
+[extension]
+pdf.inherit	= "pdf_default"
