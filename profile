@@ -50,7 +50,7 @@ export XKB_DEFAULT_OPTIONS=compose:ralt,ctrl:nocaps
 export DISPLAY=:0
 
 alias start-btpd='btpd --bw-out 200 --bw-in 200 --max-peers 40'
-alias ls='ls -1'
+alias ls='ls -1 --color=auto'
 alias e=nvim
 alias et=exit
 alias p=python
@@ -60,3 +60,5 @@ alias sw='git switch $(git branch | fzf)'
 
 # vipe is part of the package 'moreutils'
 alias h='$(history 0 | pick | awk -f ~/bin/h.awk | vipe --suffix sh)'
+
+# xmodmap ~/.xmodmaprc
