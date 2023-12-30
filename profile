@@ -61,4 +61,9 @@ alias sw='git switch $(git branch | sk)'
 # vipe is part of the package 'moreutils'
 alias h='$(history 0 | sk | awk -f ~/bin/h.awk | vipe --suffix sh)'
 
+d() {
+	word="$1"
+	curl -s dict://dict.org/d:"$word"
+}
+
 # xmodmap ~/.xmodmaprc
