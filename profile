@@ -51,12 +51,12 @@ export DISPLAY=:0
 
 alias start-btpd='btpd --bw-out 200 --bw-in 200 --max-peers 40'
 alias ls='ls -1 --color=auto'
+alias info='info --vi-keys'
 alias e=nvim
-alias et=exit
 alias p=python
 alias l=luajit
 alias cline='printf "%.0s#" $(seq 80) ; echo'
-alias sw='git switch $(git branch | fzf)'
+alias sw='git switch $(git branch | sk)'
 
 # vipe is part of the package 'moreutils'
 alias h='$(history 0 | sk | awk -f ~/bin/h.awk | vipe --suffix sh)'
