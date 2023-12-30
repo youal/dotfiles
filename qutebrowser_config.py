@@ -521,7 +521,7 @@ c.auto_save.session = True
 ## - "With increased text contrast": Set
 ## `colors.webpage.darkmode.increase_text_contrast` (QtWebEngine 6.3+)
 ## Type: Bool
-# c.colors.webpage.darkmode.enabled = False
+c.colors.webpage.darkmode.enabled = True
 
 ## Render all colors as grayscale. This only has an effect when
 ## `colors.webpage.darkmode.algorithm` is set to `lightness-hsl` or
@@ -918,7 +918,7 @@ c.content.geolocation = False
 ## qutebrowser session. If you want to make this permanent for this host, use
 ## capital letter S, i.e.:
 ## tSh
-c.content.javascript.enabled = False
+c.content.javascript.enabled = True
 
 ## Log levels to use for JavaScript console logging messages. When a
 ## JavaScript message with the level given in the dictionary key is
