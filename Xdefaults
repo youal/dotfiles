@@ -21,3 +21,8 @@ XTerm*ScrollBar: false
 
 XTerm.termName: xterm-256color
 XTerm.vt100.metaSendsEscape: true
+
+XTerm.vt100.bellIsUrgent: true
+XTerm.vt100.visualbell: true
+
+
