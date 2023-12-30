@@ -59,6 +59,6 @@ alias cline='printf "%.0s#" $(seq 80) ; echo'
 alias sw='git switch $(git branch | fzf)'
 
 # vipe is part of the package 'moreutils'
-alias h='$(history 0 | pick | awk -f ~/bin/h.awk | vipe --suffix sh)'
+alias h='$(history 0 | sk | awk -f ~/bin/h.awk | vipe --suffix sh)'
 
 # xmodmap ~/.xmodmaprc
