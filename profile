@@ -32,6 +32,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 export PATH="$HOME/.local/bin:/home/yassine/go/bin:$HOME/.cargo/bin:$PATH"
+export HTTP_HOME=https://lite.duckduckgo.com/lite/
 export JAVA_HOME=/usr
 export EDITOR=/usr/bin/nvim
 export FCEDIT="$EDITOR"
@@ -57,6 +58,7 @@ alias p=python
 alias l=luajit
 alias cline='printf "%.0s#" $(seq 80) ; echo'
 alias sw='git switch $(git branch | sk)'
+alias w='w3m "$HTTP_HOME"'
 
 # vipe is part of the package 'moreutils'
 alias h='$(history 0 | sk | awk -f ~/bin/h.awk | vipe --suffix sh)'
