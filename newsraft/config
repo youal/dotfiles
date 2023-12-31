@@ -1,0 +1,1 @@
+bind m exec mpv --no-terminal "%l" &
