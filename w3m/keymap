@@ -16,7 +16,6 @@
 #keymap ESC-M NULL
 #keymap ESC-W NULL
 #keymap ESC-c NULL
-#keymap ESC-g NULL
 #keymap ESC-k NULL
 #keymap ESC-l NULL
 #keymap ESC-o NULL
@@ -49,7 +48,6 @@ keymap w NULL
 # Navigation
 keymap ^ LINE_BEGIN
 keymap 0 LINE_BEGIN
-#keymap ESC-g GOTO_LINE
 keymap w NEXT_WORD
 keymap b PREV_WORD
 
@@ -78,8 +76,7 @@ keymap :downloads DOWNLOAD_LIST
 #keymap :hist HISTORY
 keymap :settings OPTIONS
 
-# copy url to clipboard
-keymap yy EXTERN 'printf %s | xclip -selection clipboard'
+keymap yy EXTERN 'printf %s | xsel --input --clipboard'
 
 keymap f COMMAND "RESHAPE ; LINK_BEGIN ; GOTO_LINK"
 #keymap F COMMAND "RESHAPE ; LINK_BEGIN ; TAB_LINK"
