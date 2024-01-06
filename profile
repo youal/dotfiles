@@ -15,41 +15,6 @@
 # 	. "$HOME/.bashrc"
 #     fi
 
-# pip bash completion start
-# _pip_completion()
-# {
-#     COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
-#                    COMP_CWORD=$COMP_CWORD \
-#                    PIP_AUTO_COMPLETE=1 $1 2>/dev/null ) )
-# }
-# complete -o default -F _pip_completion pip
-# # pip bash completion end
-# fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-export PATH="$HOME/.local/bin:/home/yassine/go/bin:$HOME/.cargo/bin:$PATH"
-export HTTP_HOME=https://lite.duckduckgo.com/lite/
-export JAVA_HOME=/usr
-export EDITOR=/usr/bin/nvim
-export FCEDIT="$EDITOR"
-export HISTFILE="$HOME/.shell_history"
-export HISTZISE=65535 # maximum for mksh
-
-# https://drewdevault.com/2022/05/25/Google-has-been-DDoSing-sourcehut.html
-export GOPROXY=direct
-
-# Load only in X
-# [ "$(uname)" = "Linux" ] && setxkbmap -option ctrl:nocaps
-
-# For Wayland
-export XKB_DEFAULT_LAYOUT=jp
-export XKB_DEFAULT_OPTIONS=compose:ralt,ctrl:nocaps
-export DISPLAY=:0
-
 alias start-btpd='btpd --bw-out 200 --bw-in 200 --max-peers 40'
 alias ls='ls -1 --color=auto'
 alias info='info --vi-keys'
@@ -58,7 +23,7 @@ alias p=python
 alias l=luajit
 alias cline='printf "%.0s#" $(seq 80) ; echo'
 alias sw='git switch $(git branch | sk)'
-alias w='w3m "$HTTP_HOME"'
+alias ww='w3m "$HTTP_HOME"'
 
 # vipe is part of the package 'moreutils'
 alias h='$(history 0 | sk | awk -f ~/bin/h.awk | vipe --suffix sh)'
@@ -67,5 +32,3 @@ d() {
 	word="$1"
 	curl -s dict://dict.org/d:"$word"
 }
-
-# xmodmap ~/.xmodmaprc
