@@ -1,0 +1,3 @@
+# cat /proc/asound/modules to find cards available
+defaults.ctl.card 1;
+defaults.pcm.card 1;
