@@ -32,3 +32,4 @@ d() {
 	word="$1"
 	curl -s dict://dict.org/d:"$word"
 }
+export SBCL_HOME='/usr/lib64/sbcl/'

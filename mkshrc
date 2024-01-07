@@ -11,19 +11,20 @@ PATH="$HOME/.luarocks/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 export PATH
 
-export HTTP_HOME=https://lite.duckduckgo.com/lite/
-export EDITOR=/usr/bin/nvim
+export HTTP_HOME='https://lite.duckduckgo.com/lite/'
+export EDITOR='/usr/bin/nvim'
 export FCEDIT="$EDITOR"
 export HISTFILE="$HOME/.shell_history"
 export HISTZISE=65535 # maximum for mksh
 
 # https://drewdevault.com/2022/05/25/Google-has-been-DDoSing-sourcehut.html
-export GOPROXY=direct
+export GOPROXY='direct'
 
 # For Wayland
-export XKB_DEFAULT_LAYOUT=jp
-export XKB_DEFAULT_OPTIONS=compose:ralt,ctrl:nocaps
-export DISPLAY=:0
+export XKB_DEFAULT_LAYOUT='jp'
+export XKB_DEFAULT_OPTIONS='compose:ralt,ctrl:nocaps'
+export DISPLAY=':0'
 
 export XDG_RUNTIME_DIR="$HOME/.xdg_runtime_dir"
+export GOROOT='/usr/lib/go'
 # export LD_LIBRARY_PATH=/usr/lib64
